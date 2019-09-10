@@ -1,0 +1,37 @@
+
+<meta name="viewport" content="width='device-width', intial-scale=1.0">
+   
+    <p id="a"> <b>Bank Search Application</b> </p>
+
+
+<br>
+<div id="q">
+<div class="btn-group" >
+<button class="btn btn-primary btn-md" (click)="add()">MUMBAI</button>&nbsp;&nbsp;&nbsp;
+<button class="btn btn-success btn-md" (click)="add1()">DELHI</button>&nbsp;&nbsp;&nbsp;
+<button class="btn btn-danger btn-md" (click)="add2()">KOLKATA</button>&nbsp;&nbsp;&nbsp;
+<button class="btn btn-warning btn-md"  (click)="add3()">BANGALORE</button>&nbsp;&nbsp;&nbsp;
+<button class="btn btn-success btn-md" (click)="add4()">CUTTACK</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="search" class="form-control" c placeholder="Search" [(ngModel)]='term' >
+</div></div>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Action</th>
+        <th>Bank Name</th>
+        <th>IFIC Code</th>
+        <th>Bank ID</th>
+        <th>Branch</th>
+        <th >Address</th>
+    </tr>
+    
+    <tr *ngFor='let a of dataMUMBAI|filter:term'>
+        <td><input type="checkbox" class="checkbox-inline" name="name" (click)="check()"></td>
+        <td>{{a.branch}}</td>
+        <td>{{a.ifsc}}</td>
+        <td>{{a.bank_id}}</td>
+        <td>{{a.city}}</td>
+        <td>{{a.address}}</td>
+    </tr>
+</table>
